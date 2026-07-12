@@ -1,7 +1,6 @@
- let arr = []
-for (let i = 0; i<=3; i++){
-    let ans = prompt("enter your number")
-    arr.push(ans)
-
+let arr = [20 , 50, 40];
+let sum = 0;
+for (let i = 0; i < arr.length; i++) {
+    sum = sum + arr[i]
 }
-console.log(arr)
+console.log(sum)
