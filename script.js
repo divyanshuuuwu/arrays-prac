@@ -87,15 +87,31 @@
 // console.log(newArr)
 
 // reverse an array without usiing extra space
-let arr = [20, 30, 40, 50, 60];
-let i = 0
-let j = arr.length-1
+// let arr = [20, 30, 40, 50, 60];
+// let i = 0
+// let j = arr.length-1
  
-while(i!=j){
-    let temp = arr[i]
-    arr[i] = arr[j]
-    arr[j] = temp
-    i++
-    j--
+// while(i!=j){
+//     let temp = arr[i]
+//     arr[i] = arr[j]
+//     arr[j] = temp
+//     i++
+//     j--
+// }
+// console.log(arr)
+
+//zero on one side
+let nums = [0,1,0,3,12]
+  let i = 0;
+let j = 0;
+
+while(i < nums.length){
+    if(nums[i] !== 0){
+        let temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
+        j++;
+    }
+    i++;
 }
-console.log(arr)
+console.log(nums)
