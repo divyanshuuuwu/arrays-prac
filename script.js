@@ -56,18 +56,33 @@
 
 //find the second min
 
-let arr = [10, 30, 56, 43, 29, 64, 49, 60, 64];
-let min = Math.min(arr[0], arr[1]);
-let Smin = Math.max(arr[0], arr[1]);
+// let arr = [10, 30, 56, 43, 29, 64, 49, 60, 64];
+// let min = Math.min(arr[0], arr[1]);
+// let Smin = Math.max(arr[0], arr[1]);
 
-for(let i=2; i<arr.length; i++){
-    if(arr[i] < min){
-        Smin = min
-        min = arr[i]
-    }
-    else if(arr[i] < Smin && arr[i] != min){
-        Smin = arr[i]
-    }
+// for(let i=2; i<arr.length; i++){
+//     if(arr[i] < min){
+//         Smin = min
+//         min = arr[i]
+//     }
+//     else if(arr[i] < Smin && arr[i] != min){
+//         Smin = arr[i]
+//     }
+// }
+
+// console.log(Smin)
+
+
+
+// reverse an array with an extra space 
+
+let arr = [20, 30, 40, 50, 60];
+let newArr = new Array(arr.length);
+
+let j = 0;
+for(let i = arr.length-1; i>=0; i--){
+    newArr[j] = arr[i];
+    j++
+    
 }
-
-console.log(Smin)
+console.log(newArr)
