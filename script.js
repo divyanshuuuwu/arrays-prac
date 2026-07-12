@@ -35,18 +35,39 @@
 
 //find the second max
 
+// let arr = [10, 30, 56, 43, 29, 64, 49, 60, 64];
+// let max = Math.max(arr[0], arr[1]);
+// let Smax = Math.min(arr[0], arr[1]);
+
+// for(let i=2; i<arr.length; i++){
+//     if(arr[i] > max){
+//         Smax = max
+//         max = arr[i]
+//     }
+//     else if(arr[i] > Smax && arr[i] != max){
+//         Smax = arr[i]
+//     }
+// }
+
+// console.log(Smax)
+
+
+
+
+//find the second min
+
 let arr = [10, 30, 56, 43, 29, 64, 49, 60, 64];
-let max = Math.max(arr[0], arr[1]);
-let Smax = Math.min(arr[0], arr[1]);
+let min = Math.min(arr[0], arr[1]);
+let Smin = Math.max(arr[0], arr[1]);
 
 for(let i=2; i<arr.length; i++){
-    if(arr[i] > max){
-        Smax = max
-        max = arr[i]
+    if(arr[i] < min){
+        Smin = min
+        min = arr[i]
     }
-    else if(arr[i] > Smax && arr[i] != max){
-        Smax = arr[i]
+    else if(arr[i] < Smin && arr[i] != min){
+        Smin = arr[i]
     }
 }
 
-console.log(Smax)
+console.log(Smin)
