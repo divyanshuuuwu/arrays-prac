@@ -82,7 +82,7 @@
 // for(let i = arr.length-1; i>=0; i--){
 //     newArr[j] = arr[i];
 //     j++
-    
+
 // }
 // console.log(newArr)
 
@@ -90,7 +90,7 @@
 // let arr = [20, 30, 40, 50, 60];
 // let i = 0
 // let j = arr.length-1
- 
+
 // while(i!=j){
 //     let temp = arr[i]
 //     arr[i] = arr[j]
@@ -116,7 +116,7 @@
 // }
 // console.log(nums)
 
- // left rotation by 1 element
+// left rotation by 1 element
 
 //  let arr = [1, 2, 3, 4, 5]
 //  let copy = arr[0];
@@ -125,15 +125,29 @@
 //  }
 //  arr[arr.length-1]=copy
 //  console.log(arr);
- 
+
 // right rotataion by 1 element
 
-let arr = [1, 2, 3, 4, 5]
-let copy = arr[arr.length-1];
+// let arr = [1, 2, 3, 4, 5]
+// let copy = arr[arr.length-1];
 
-for(let i= arr.length-1; i>0; i--){
-    arr[i] = arr[i-1]
+// for(let i= arr.length-1; i>0; i--){
+//     arr[i] = arr[i-1]
+// }
+// arr[0] = copy
+// console.log(arr);
+
+
+// left rotation by k steps
+
+let arr = [1, 2, 3, 4, 5];
+let k = 2
+for (let i = 0; i < k; i++) {
+    let copy = arr[0];
+    for (let i = 0; i < arr.length - 1; i++) {
+        arr[i] = arr[i + 1]
+    }
+    arr[arr.length-1]=copy
+
 }
-arr[0] = copy
-console.log(arr);
-
+console.log(arr)
