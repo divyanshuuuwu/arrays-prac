@@ -168,18 +168,33 @@
 
 // Remove Duplicates from Array
 
-let arr = [1, 1, 2, 2, 3, 4, 4, 5];
+// let arr = [1, 1, 2, 2, 3, 4, 4, 5];
 
-let j = 0;
+// let j = 0;
 
-for (let i = 1; i < arr.length; i++) {
-    if(arr[i] !== arr[j]){
-        j++
-        let temp = arr[i]
-        arr[i] = arr[j]
-        arr[j] = temp
+// for (let i = 1; i < arr.length; i++) {
+//     if(arr[i] !== arr[j]){
+//         j++
+//         let temp = arr[i]
+//         arr[i] = arr[j]
+//         arr[j] = temp
+//     }
+// }
+
+// console.log(arr)
+
+// remove element
+let nums = [0,1,2,2,3,0,4,2] 
+let val = 2
+
+let k = 0;
+
+    for (let i = 0; i < nums.length; i++) {
+
+        if (nums[i] !== val) {
+            nums[k] = nums[i];
+            k++;
+        }
     }
-}
 
-console.log(arr)
-
+    console.log (nums);
