@@ -154,13 +154,32 @@
 
 // right rotation by k elements
 
-let arr = [1, 2, 3, 4, 5];
-let k = 2
-for (let i = 0; i < k; i++) {
-    let copy = arr[arr.length - 1];
-    for (let i = arr.length - 1; i > 0; i--) {
-        arr[i] = arr[i - 1]
+// let arr = [1, 2, 3, 4, 5];
+// let k = 2
+// for (let i = 0; i < k; i++) {
+//     let copy = arr[arr.length - 1];
+//     for (let i = arr.length - 1; i > 0; i--) {
+//         arr[i] = arr[i - 1]
+//     }
+//     arr[0] = copy
+// }
+// console.log(arr)
+
+
+// Remove Duplicates from Array
+
+let arr = [1, 1, 2, 2, 3, 4, 4, 5];
+
+let j = 0;
+
+for (let i = 1; i < arr.length; i++) {
+    if(arr[i] !== arr[j]){
+        j++
+        let temp = arr[i]
+        arr[i] = arr[j]
+        arr[j] = temp
     }
-    arr[0] = copy
 }
+
 console.log(arr)
+
