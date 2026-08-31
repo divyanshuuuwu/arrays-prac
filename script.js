@@ -184,17 +184,30 @@
 // console.log(arr)
 
 // remove element
-let nums = [0,1,2,2,3,0,4,2] 
-let val = 2
+// let nums = [0,1,2,2,3,0,4,2] 
+// let val = 2
 
-let k = 0;
+// let k = 0;
 
-    for (let i = 0; i < nums.length; i++) {
+//     for (let i = 0; i < nums.length; i++) {
 
-        if (nums[i] !== val) {
-            nums[k] = nums[i];
-            k++;
+//         if (nums[i] !== val) {
+//             nums[k] = nums[i];
+//             k++;
+//         }
+//     }
+
+//     console.log (k, nums);
+
+
+// two sum my Brute force  
+
+let nums = [2,7,11,15]
+let target = 9
+// output: [0,1]
+for(let i =0; i<nums.length; i++){
+        for(let j = i+1; j<nums.length; j++)
+        if(nums[i] + nums[j] === target){
+            console.log([i,j])
         }
     }
-
-    console.log (nums);
