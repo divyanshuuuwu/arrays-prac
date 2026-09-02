@@ -34,15 +34,34 @@
 //     }
 //     console.log(nums)
 // Check if All A's Appears Before All B's
-const s = "abab";
-function checkString(s) {
-    for (let i = 0; i < s.length - 1; i++) {
-        if (s[i] === "b" && s[i + 1] === "a") {
-            return false;
+// const s = "abab"
+// function checkString(s: string): boolean {
+//     for(let i:number = 0; i<s.length-1; i++){
+//         if(s[i] === "b" && s[i+1] === "a"){
+//             return false
+//         }
+//     }
+//     return true
+// };
+// const result = checkString(s)
+// console.log(result)
+let nums = [1, 2, 3, 4, 5, 6];
+let target = 5;
+function twoSum(nums, target) {
+    let j = nums.length - 1;
+    let i = 0;
+    while (i < nums.length) {
+        if (nums[i] + nums[j] > target) {
+            j--;
+        }
+        else if (nums[i] + nums[j] < target) {
+            i++;
+        }
+        else if (nums[i] + nums[j] === target) {
+            return [i, j];
         }
     }
-    return true;
 }
 ;
-const result = checkString(s);
+let result = twoSum(nums, target);
 console.log(result);

@@ -47,18 +47,50 @@
 
 
 // Check if All A's Appears Before All B's
-const s = "abab"
+// const s = "abab"
 
-function checkString(s: string): boolean {
-    for(let i:number = 0; i<s.length-1; i++){
-        if(s[i] === "b" && s[i+1] === "a"){
+// function checkString(s: string): boolean {
+//     for(let i:number = 0; i<s.length-1; i++){
+//         if(s[i] === "b" && s[i+1] === "a"){
 
-            return false
-        }
+//             return false
+//         }
 
+//     }
+
+//     return true
+// };
+// const result = checkString(s)
+// console.log(result)
+
+
+// two sum for sorted array
+let nums:number[] = [1,2,3,4,5,6]
+let target:number = 5
+
+function twoSum(nums: number[], target: number): void | number[] {
+
+let j:number = nums.length-1;
+let i:number = 0;
+
+while(i<nums.length){
+    if(nums[i] + nums[j] > target){
+        j--
     }
 
-    return true
+    else if(nums[i] + nums[j] < target){
+        i++
+    }
+
+    else if(nums[i] + nums[j] === target){
+        return [i,j]
+    }
+    
+}
+
+
 };
-const result = checkString(s)
+
+let result=twoSum(nums, target)
+
 console.log(result)
