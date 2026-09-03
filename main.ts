@@ -65,32 +65,66 @@
 
 
 // two sum for sorted array
-let nums:number[] = [1,2,3,4,5,6]
-let target:number = 5
+// let nums:number[] = [1,2,3,4,5,6]
+// let target:number = 5
 
-function twoSum(nums: number[], target: number): void | number[] {
+// function twoSum(nums: number[], target: number): void | number[] {
 
-let j:number = nums.length-1;
-let i:number = 0;
+// let j:number = nums.length-1;
+// let i:number = 0;
 
-while(i<nums.length){
-    if(nums[i] + nums[j] > target){
-        j--
+// while(i<nums.length){
+//     if(nums[i] + nums[j] > target){
+//         j--
+//     }
+
+//     else if(nums[i] + nums[j] < target){
+//         i++
+//     }
+
+//     else if(nums[i] + nums[j] === target){
+//         return [i,j]
+//     }
+    
+// }
+
+
+// };
+
+// let result=twoSum(nums, target)
+
+// console.log(result)
+
+// move zeros to end of array striver
+
+
+let nums:number[] = [1,0,3,12,4,5,0,6,7]
+
+
+
+function moveZeroes(nums: number[]): void {
+    //find the first zero
+    let j = -1
+    for(let i:number= 0; i<nums.length; i++){
+        if(nums[i] === 0){
+            j = i
+        break
+        }
+        
     }
+    // No zero found
+    if (j === -1) return;
 
-    else if(nums[i] + nums[j] < target){
-        i++
-    }
-
-    else if(nums[i] + nums[j] === target){
-        return [i,j]
+    for(let i:number= j+1; i<nums.length; i++){
+        if(nums[i] !== 0){
+            let temp = nums[i]
+            nums[i] = nums[j]
+            nums[j] = temp
+            j++
+        }
     }
     
-}
-
-
 };
 
-let result=twoSum(nums, target)
-
-console.log(result)
+moveZeroes(nums)
+console.log(nums)
