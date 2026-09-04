@@ -132,60 +132,95 @@
 
 // union of two sorted arrays
 
-let arr1 = [1, 2, 2, 3, 4];
-let arr2 = [2, 3, 5, 6];
+// let arr1 = [1, 2, 2, 3, 4];
+// let arr2 = [2, 3, 5, 6];
 
 
 
-function union(arr1: number[], arr2: number[]): number[] {
-    let i = 0;
-    let j = 0;
-    let result: number[] = [];
+// function union(arr1: number[], arr2: number[]): number[] {
+//     let i = 0;
+//     let j = 0;
+//     let result: number[] = [];
 
-    while (i < arr1.length && j < arr2.length) {
+//     while (i < arr1.length && j < arr2.length) {
 
-        if (arr1[i] < arr2[j]) {
-            // Add only if it's not a duplicate
-            if (result.length === 0 || result[result.length - 1] !== arr1[i]) {
-                result.push(arr1[i]);
-            }
-            i++;
-        }
+//         if (arr1[i] < arr2[j]) {
+//             // Add only if it's not a duplicate
+//             if (result.length === 0 || result[result.length - 1] !== arr1[i]) {
+//                 result.push(arr1[i]);
+//             }
+//             i++;
+//         }
 
-        else if (arr1[i] > arr2[j]) {
-            if (result.length === 0 || result[result.length - 1] !== arr2[j]) {
-                result.push(arr2[j]);
-            }
-            j++;
-        }
+//         else if (arr1[i] > arr2[j]) {
+//             if (result.length === 0 || result[result.length - 1] !== arr2[j]) {
+//                 result.push(arr2[j]);
+//             }
+//             j++;
+//         }
 
-        else {
-            // Both are equal
-            if (result.length === 0 || result[result.length - 1] !== arr1[i]) {
-                result.push(arr1[i]);
-            }
-            i++;
-            j++;
-        }
-    }
+//         else {
+//             // Both are equal
+//             if (result.length === 0 || result[result.length - 1] !== arr1[i]) {
+//                 result.push(arr1[i]);
+//             }
+//             i++;
+//             j++;
+//         }
+//     }
 
-    // Remaining elements of arr1
-    while (i < arr1.length) {
-        if (result.length === 0 || result[result.length - 1] !== arr1[i]) {
-            result.push(arr1[i]);
-        }
-        i++;
-    }
+//     // Remaining elements of arr1
+//     while (i < arr1.length) {
+//         if (result.length === 0 || result[result.length - 1] !== arr1[i]) {
+//             result.push(arr1[i]);
+//         }
+//         i++;
+//     }
 
-    // Remaining elements of arr2
-    while (j < arr2.length) {
-        if (result.length === 0 || result[result.length - 1] !== arr2[j]) {
-            result.push(arr2[j]);
-        }
-        j++;
-    }
+//     // Remaining elements of arr2
+//     while (j < arr2.length) {
+//         if (result.length === 0 || result[result.length - 1] !== arr2[j]) {
+//             result.push(arr2[j]);
+//         }
+//         j++;
+//     }
 
-    return result;
+//     return result;
+// }
+
+// console.log(union(arr1, arr2));
+
+
+// intersection of two sorted arrays
+let arr1 = [1,2,3,3,4,4,5,6];
+let arr2 = [2,3,3,5,6,6,7];
+
+function intersection(arr1:number[], arr2:number[]):number[]{
+  let i:number = 0
+  let j:number = 0
+  let ans:number[] = []
+
+  while(i<arr1.length && j<arr2.length){
+    if (arr1[i] < arr2[j]) {
+    i++;
+}
+else if (arr1[i] > arr2[j]) {
+    j++;
+}
+else {
+    ans.push(arr1[i]);
+    i++;
+    j++;
 }
 
-console.log(union(arr1, arr2));
+    
+  }
+
+  return ans
+
+}
+
+let result = intersection(arr1, arr2)
+console.log(result)
+
+
