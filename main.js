@@ -137,26 +137,40 @@
 // }
 // console.log(union(arr1, arr2));
 // intersection of two sorted arrays
-let arr1 = [1, 2, 3, 3, 4, 4, 5, 6];
-let arr2 = [2, 3, 3, 5, 6, 6, 7];
-function intersection(arr1, arr2) {
-    let i = 0;
-    let j = 0;
-    let ans = [];
-    while (i < arr1.length && j < arr2.length) {
-        if (arr1[i] < arr2[j]) {
-            i++;
-        }
-        else if (arr1[i] > arr2[j]) {
-            j++;
-        }
-        else {
-            ans.push(arr1[i]);
-            i++;
-            j++;
-        }
+// let arr1 = [1,2,3,3,4,4,5,6];
+// let arr2 = [2,3,3,5,6,6,7];
+// function intersection(arr1:number[], arr2:number[]):number[]{
+//   let i:number = 0
+//   let j:number = 0
+//   let ans:number[] = []
+//   while(i<arr1.length && j<arr2.length){
+//     if (arr1[i] < arr2[j]) {
+//     i++;
+// }
+// else if (arr1[i] > arr2[j]) {
+//     j++;
+// }
+// else {
+//     ans.push(arr1[i]);
+//     i++;
+//     j++;
+// }
+//   }
+//   return ans
+// }
+// let result = intersection(arr1, arr2)
+// console.log(result)
+// find the missing element 
+let nums = [1, 0, 3, 4, 5, 6, 7, 8, 9, 10];
+function missingNumber(nums) {
+    let n = nums.length;
+    let sum = (n * (n + 1)) / 2;
+    let s2 = 0;
+    for (let i = 0; i < nums.length; i++) {
+        s2 = s2 + nums[i];
     }
-    return ans;
+    return sum - s2;
 }
-let result = intersection(arr1, arr2);
+;
+let result = missingNumber(nums);
 console.log(result);
