@@ -240,3 +240,27 @@
 // let result = missingNumber(nums)
 // console.log(result)
 
+// maximum consecutive one's
+
+ let nums:number[] = [1,1,0,1,1,1,1,0,1,1,1]
+ function findMaxConsecutiveOnes(nums: number[]): number {
+    let maximum:number = 0
+    let count:number = 0
+
+    for(let i:number = 0; i<nums.length; i++){
+        if(nums[i] === 1){
+            count++
+            maximum = Math.max(maximum,count)    
+        }
+        else{
+            count = 0
+        }
+    }
+        
+
+    return maximum
+};
+
+const result = findMaxConsecutiveOnes(nums)
+console.log(result)
+

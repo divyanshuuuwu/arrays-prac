@@ -161,16 +161,34 @@
 // let result = intersection(arr1, arr2)
 // console.log(result)
 // find the missing element 
-let nums = [1, 0, 3, 4, 5, 6, 7, 8, 9, 10];
-function missingNumber(nums) {
-    let n = nums.length;
-    let sum = (n * (n + 1)) / 2;
-    let s2 = 0;
+// let nums:number[] = [1,0,3,4,5,6,7,8,9,10]
+// function missingNumber(nums: number[]): number {
+//     let n:number = nums.length
+//     let sum = (n * (n + 1)) / 2;
+//     let s2 = 0
+//     for(let i:number = 0; i<nums.length; i++){
+//         s2 = s2+nums[i]
+//     }
+//     return sum-s2
+// };
+// let result = missingNumber(nums)
+// console.log(result)
+// maximum consecutive one's
+let nums = [1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1];
+function findMaxConsecutiveOnes(nums) {
+    let maximum = 0;
+    let count = 0;
     for (let i = 0; i < nums.length; i++) {
-        s2 = s2 + nums[i];
+        if (nums[i] === 1) {
+            count++;
+            maximum = Math.max(maximum, count);
+        }
+        else {
+            count = 0;
+        }
     }
-    return sum - s2;
+    return maximum;
 }
 ;
-let result = missingNumber(nums);
+const result = findMaxConsecutiveOnes(nums);
 console.log(result);
