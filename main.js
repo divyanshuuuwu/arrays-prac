@@ -192,16 +192,32 @@
 // const result = findMaxConsecutiveOnes(nums)
 // console.log(result)
 // Check if the Sentence Is Pangram
-let sentence = "thequickbrownfoxjumpsoverthelazydog";
-function checkIfPangram(sentence) {
-    let Sset = new Set(sentence);
-    if (Sset.size === 26) {
-        return true;
+// let sentence = "thequickbrownfoxjumpsoverthelazydog"
+// function checkIfPangram(sentence: string): boolean {
+//     let Sset = new Set(sentence)
+//     if(Sset.size === 26){
+//         return true
+//     }
+//     else{
+//         return false
+//     }
+// };
+// let result = checkIfPangram(sentence)
+// console.log(result)
+//single number
+let nums = [4, 1, 2, 1, 2];
+function singleNumber(nums) {
+    let mpp = new Map();
+    for (const num of nums) {
+        mpp.set(num, (mpp.get(num) ?? 0) + 1);
     }
-    else {
-        return false;
+    for (const [num, count] of mpp) {
+        if (count === 1) {
+            return num;
+        }
     }
+    return -1;
 }
 ;
-let result = checkIfPangram(sentence);
+let result = singleNumber(nums);
 console.log(result);

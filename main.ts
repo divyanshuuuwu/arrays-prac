@@ -265,17 +265,39 @@
 // console.log(result)
 
 // Check if the Sentence Is Pangram
-let sentence = "thequickbrownfoxjumpsoverthelazydog"
+// let sentence = "thequickbrownfoxjumpsoverthelazydog"
 
-function checkIfPangram(sentence: string): boolean {
-    let Sset = new Set(sentence)
-    if(Sset.size === 26){
-        return true
+// function checkIfPangram(sentence: string): boolean {
+//     let Sset = new Set(sentence)
+//     if(Sset.size === 26){
+//         return true
+//     }
+//     else{
+//         return false
+//     }
+// };
+
+// let result = checkIfPangram(sentence)
+// console.log(result)
+
+//single number using hashmap
+let nums:number[] = [4,1,2,1,2]
+
+function singleNumber(nums: number[]): number {
+    let mpp = new Map<number,number>()
+    for(const num of nums){
+        mpp.set(num,(mpp.get(num)??0)+1)}
+    for(const[num,count] of mpp){
+        if(count === 1){
+            return num
+        }
     }
-    else{
-        return false
-    }
+
+    return -1
+    
 };
 
-let result = checkIfPangram(sentence)
+
+
+let result = singleNumber(nums)
 console.log(result)
