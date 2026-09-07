@@ -281,23 +281,41 @@
 // console.log(result)
 
 //single number using hashmap
-let nums:number[] = [4,1,2,1,2]
+// let nums:number[] = [4,1,2,1,2]
 
-function singleNumber(nums: number[]): number {
-    let mpp = new Map<number,number>()
-    for(const num of nums){
-        mpp.set(num,(mpp.get(num)??0)+1)}
-    for(const[num,count] of mpp){
-        if(count === 1){
-            return num
-        }
-    }
+// function singleNumber(nums: number[]): number {
+//     let mpp = new Map<number,number>()
+//     for(const num of nums){
+//         mpp.set(num,(mpp.get(num)??0)+1)}
+//     for(const[num,count] of mpp){
+//         if(count === 1){
+//             return num
+//         }
+//     }
 
-    return -1
+//     return -1
     
-};
+// };
 
 
 
-let result = singleNumber(nums)
-console.log(result)
+// let result = singleNumber(nums)
+// console.log(result)
+
+
+
+//single number using XOR
+//  let nums:number[] = [4,1,2,1,2]
+
+//  function singleNumber(nums: number[]): number {
+//    let result:number = 0
+//     for(let num of nums){
+//         result = result ^ num     
+//     }
+//     return result
+// };
+
+// let result = singleNumber(nums)
+// console.log(result)
+
+
