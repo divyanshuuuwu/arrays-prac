@@ -174,21 +174,34 @@
 // let result = missingNumber(nums)
 // console.log(result)
 // maximum consecutive one's
-let nums = [1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1];
-function findMaxConsecutiveOnes(nums) {
-    let maximum = 0;
-    let count = 0;
-    for (let i = 0; i < nums.length; i++) {
-        if (nums[i] === 1) {
-            count++;
-            maximum = Math.max(maximum, count);
-        }
-        else {
-            count = 0;
-        }
+//  let nums:number[] = [1,1,0,1,1,1,1,0,1,1,1]
+//  function findMaxConsecutiveOnes(nums: number[]): number {
+//     let maximum:number = 0
+//     let count:number = 0
+//     for(let i:number = 0; i<nums.length; i++){
+//         if(nums[i] === 1){
+//             count++
+//             maximum = Math.max(maximum,count)    
+//         }
+//         else{
+//             count = 0
+//         }
+//     }
+//     return maximum
+// };
+// const result = findMaxConsecutiveOnes(nums)
+// console.log(result)
+// Check if the Sentence Is Pangram
+let sentence = "thequickbrownfoxjumpsoverthelazydog";
+function checkIfPangram(sentence) {
+    let Sset = new Set(sentence);
+    if (Sset.size === 26) {
+        return true;
     }
-    return maximum;
+    else {
+        return false;
+    }
 }
 ;
-const result = findMaxConsecutiveOnes(nums);
+let result = checkIfPangram(sentence);
 console.log(result);
