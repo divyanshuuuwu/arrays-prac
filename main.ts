@@ -318,4 +318,28 @@
 // let result = singleNumber(nums)
 // console.log(result)
 
+// Squares of a Sorted Array
+let nums = [-4,-1,0,3,10]
+function sortedSquares(nums: number[]): number[] {
+   let newNums:number[] = new Array(nums.length)
+    let left = 0;
+    let right = nums.length-1
 
+    for(let i = nums.length-1; i>=0; i--){
+        let leftsq = nums[left]**2
+        let rightsq = nums[right]**2
+
+        if(leftsq > rightsq){
+            newNums[i] = leftsq
+            left++
+        }
+        else{
+            newNums[i] = rightsq
+            right--
+        }
+    }
+   return newNums
+};
+
+let result = sortedSquares(nums)
+console.log(result)
