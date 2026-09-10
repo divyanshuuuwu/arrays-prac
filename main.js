@@ -231,25 +231,61 @@
 // let result = singleNumber(nums)
 // console.log(result)
 // Squares of a Sorted Array
-let nums = [-4, -1, 0, 3, 10];
-function sortedSquares(nums) {
-    let newNums = new Array(nums.length);
-    let left = 0;
-    let right = nums.length - 1;
-    for (let i = nums.length - 1; i >= 0; i--) {
-        let leftsq = nums[left] ** 2;
-        let rightsq = nums[right] ** 2;
-        if (leftsq > rightsq) {
-            newNums[i] = leftsq;
-            left++;
+// let nums = [-4,-1,0,3,10]
+// function sortedSquares(nums: number[]): number[] {
+//    let newNums:number[] = new Array(nums.length)
+//     let left = 0;
+//     let right = nums.length-1
+//     for(let i = nums.length-1; i>=0; i--){
+//         let leftsq = nums[left]**2
+//         let rightsq = nums[right]**2
+//         if(leftsq > rightsq){
+//             newNums[i] = leftsq
+//             left++
+//         }
+//         else{
+//             newNums[i] = rightsq
+//             right--
+//         }
+//     }
+//    return newNums
+// };
+// let result = sortedSquares(nums)
+// console.log(result)
+// 3sum optimal
+let nums = [-1, 0, 1, 2, -1, -4];
+function threeSum(nums) {
+    nums.sort((a, b) => a - b);
+    let result = [];
+    for (let i = 0; i < nums.length; i++) {
+        if (i > 0 && nums[i] === nums[i - 1]) {
+            continue;
         }
-        else {
-            newNums[i] = rightsq;
-            right--;
+        let j = i + 1;
+        let k = nums.length - 1;
+        while (j < k) {
+            let sum = nums[i] + nums[j] + nums[k];
+            if (sum < 0) {
+                j++;
+            }
+            if (sum > 0) {
+                k--;
+            }
+            if (sum === 0) {
+                result.push([nums[i], nums[j], nums[k]]);
+                j++;
+                k--;
+                while (j < k && nums[j] === nums[j - 1]) {
+                    j++;
+                }
+                while (j < k && nums[k] === nums[k - 1]) {
+                    k--;
+                }
+            }
         }
     }
-    return newNums;
+    return result;
 }
 ;
-let result = sortedSquares(nums);
+const result = threeSum(nums);
 console.log(result);
