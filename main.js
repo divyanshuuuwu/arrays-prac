@@ -323,3 +323,27 @@
 // }
 // const result = threeSumClosest(nums, target)
 // console.log(result)
+//triplets with smaller sum
+let arr = [-2, 0, 1, 3];
+let sum = 2;
+function countTriplets(arr, sum) {
+    arr.sort((a, b) => a - b);
+    let count = 0;
+    for (let i = 0; i < arr.length - 2; i++) {
+        let left = i + 1;
+        let right = arr.length - 1;
+        while (left < right) {
+            const currentSum = arr[i] + arr[left] + arr[right];
+            if (currentSum < sum) {
+                count += right - left;
+                left++;
+            }
+            else {
+                right--;
+            }
+        }
+    }
+    return count;
+}
+const result = countTriplets(arr, sum);
+console.log(result);
