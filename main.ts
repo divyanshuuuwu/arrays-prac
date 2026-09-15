@@ -438,32 +438,58 @@
 
 
 //triplets with smaller sum
-let arr = [-2, 0, 1, 3]
-let sum = 2
+// let arr = [-2, 0, 1, 3]
+// let sum = 2
 
-function countTriplets(arr: number[], sum: number): number {
-    arr.sort((a, b) => a - b);
+// function countTriplets(arr: number[], target: number): number {
+//     arr.sort((a, b) => a - b);
 
-    let count = 0;
+//     let count = 0;
 
-    for (let i = 0; i < arr.length - 2; i++) {
-        let left = i + 1;
-        let right = arr.length - 1;
+//     for (let i = 0; i < arr.length - 2; i++) {
+//         let left = i + 1;
+//         let right = arr.length - 1;
 
-        while (left < right) {
-            const currentSum = arr[i] + arr[left] + arr[right];
+//         while (left < right) {
+//             const sum = arr[i] + arr[left] + arr[right];
 
-            if (currentSum < sum) {
-                count += right - left;
-                left++;
-            } else {
-                right--;
-            }
+//             if (sum < target) {
+//                 count = count + (right - left);
+//                 left++;
+//             } else {
+//                 right--;
+//             }
+//         }
+//     }
+
+//     return count;
+// }
+
+// const result = countTriplets(arr, sum)
+// console.log(result)
+
+
+// sort colors 
+function sortColors(nums: number[]): void {
+    let low = 0;
+    let mid = 0;
+    let high = nums.length - 1;
+
+    while (mid <= high) {
+        if (nums[mid] === 0) {
+            // Put 0 in the low region
+            [nums[low], nums[mid]] = [nums[mid], nums[low]];
+            low++;
+            mid++;
+        } 
+        else if (nums[mid] === 1) {
+            // 1 is already in the correct middle region
+            mid++;
+        } 
+        else {
+            // Put 2 in the high region
+            [nums[mid], nums[high]] = [nums[high], nums[mid]];
+            high--;
         }
     }
-
-    return count;
 }
-
-const result = countTriplets(arr, sum)
-console.log(result)
